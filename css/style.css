@@ -42,6 +42,7 @@ html, body {
 	background-position: center bottom;
 }
 .content{
+	width: 377px;
 	-moz-user-select: none;
 -webkit-user-select: none;
 -ms-user-select: none;
