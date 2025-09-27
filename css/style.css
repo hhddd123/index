@@ -42,8 +42,9 @@ html, body {
 	background-position: center bottom;
 }
 .content{
-	width: 377px;
-	height: 377px;
+	width: 90%;
+	max-width: 500px;
+	min-height: 400px;
 	-moz-user-select: none;
 -webkit-user-select: none;
 -ms-user-select: none;
@@ -55,7 +56,9 @@ user-select: none;
     left: 50%;
     top: 45%;
 	transform: translate(-50%,-50%);
-	z-index:9999
+	z-index:9999;
+	padding: 20px;
+	box-sizing: border-box;
 }
 .content .title{
 	margin: 15px 0;
@@ -83,30 +86,39 @@ nav {
     position: relative;
 }
 .navigation {
-    display: inline-block;
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
     margin: 0;
     list-style-type: none;
+    padding: 0;
 }
 .navigation__item {
     display: inline-block;
     line-height: 1em;
-    padding: 1em 0;
+    padding: 0;
+    flex: 0 0 auto;
 }
 .navigation__item a {
     position: relative;
     color: #FFF;
     opacity: .8;
 	transition: all .3s;
-	padding: 10px 20px;
+	padding: 12px 18px;
     border: 1px solid #fff;
-    border-radius: 20px;
-    font-size: .9em;
+    border-radius: 25px;
+    font-size: 0.85em;
     font-weight: bold;
     letter-spacing: 1px;
     text-shadow: none;
 	-webkit-font-smoothing: antialiased;
 	text-decoration: none;
+	display: inline-block;
+	min-width: 100px;
+	text-align: center;
+	white-space: nowrap;
 }
 .navigation__item a:hover {
     color: #FFF;
@@ -130,4 +142,70 @@ ol, ul {
 .icpnum{
 	color: #fff;
 	text-decoration: none;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+	.content {
+		width: 95%;
+		max-width: 400px;
+		padding: 15px;
+		top: 40%;
+	}
+	
+	.content .title {
+		font-size: 2em;
+		letter-spacing: 2px;
+		margin: 10px 0;
+	}
+	
+	.navigation {
+		gap: 10px;
+		margin: 20px 0;
+	}
+	
+	.navigation__item a {
+		padding: 10px 15px;
+		font-size: 0.8em;
+		min-width: 80px;
+	}
+	
+	.content .hr {
+		width: 60%;
+		margin: 15px auto;
+	}
+	
+	.cover-navigation {
+		margin: 20px 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.content {
+		width: 98%;
+		padding: 10px;
+		top: 35%;
+	}
+	
+	.content .title {
+		font-size: 1.8em;
+		letter-spacing: 1px;
+	}
+	
+	.navigation {
+		flex-direction: column;
+		gap: 8px;
+	}
+	
+	.navigation__item a {
+		width: 100%;
+		max-width: 200px;
+		padding: 12px 20px;
+		font-size: 0.85em;
+	}
+	
+	.content .hr {
+		width: 70%;
+		margin: 12px auto;
+	}
 }
